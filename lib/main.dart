@@ -1,59 +1,71 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(
-    MaterialApp(
-      title: "contador de pessoas",
-      home: Stack(
-        children: [
-          Image.asset(
-            "assets/images/restaurant",
-            fit: BoxFit.cover,
-            height: 10000,
-          ),
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                "Pessoas: 0",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: FlatButton(
-                      onPressed: () {},
-                      child: Text(
-                        "+1",
-                        style: TextStyle(fontSize: 30),
-                      ),
+  runApp(MaterialApp(
+    home: Home(),
+  ));
+}
+
+class Home extends StatefulWidget {
+  const Home({Key? key}) : super(key: key);
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        Image.asset(
+          "assets/images/restaurant.jpg",
+          fit: BoxFit.cover,
+          height: 1000.0,
+        ),
+        Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              "Pessoas: 0",
+              style:
+                  TextStyle(fontWeight: FontWeight.bold, color: Colors.white),
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "+1",
+                      style: TextStyle(fontSize: 30, color: Colors.white),
                     ),
                   ),
-                  Padding(
-                    padding: EdgeInsets.all(10.0),
-                    child: FlatButton(
-                      onPressed: () {},
-                      child: Text(
-                        "+1",
-                        style: TextStyle(fontSize: 30),
-                      ),
+                ),
+                Padding(
+                  padding: EdgeInsets.all(10.0),
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      "+1",
+                      style: TextStyle(fontSize: 30, color: Colors.white),
                     ),
-                  )
-                ],
-              ),
-              Text(
-                "Pode Entrar!",
-                style: TextStyle(
+                  ),
+                )
+              ],
+            ),
+            Text(
+              "Pode Entrar!",
+              style: TextStyle(
                   fontStyle: FontStyle.italic,
                   fontSize: 30,
-                ),
-              )
-            ],
-          )
-        ],
-      ),
-    ),
-  );
+                  color: Colors.white),
+            )
+          ],
+        )
+      ],
+    );
+  }
 }
